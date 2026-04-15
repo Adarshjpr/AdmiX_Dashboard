@@ -1,22 +1,29 @@
 
 import React from 'react'
 
-const UserList = () => {
+const UserList = ({data}) => {
   return (
 <>
-<div className="cards">
-  <div>AS</div>
+
+
+{data.map((item , index)=>{
+  console.log(item.name)
+  return <div>
+   <div className="cards"  key={index}>
+  <div>{item.name.substring(0, 2)}</div>
 
   <div>
-    <p>Adarsh</p>
-    <p>adarsh@gmail.com</p>
-    <p>Developer</p>
+    <p>{item.name}</p>
+    <p>{item.email}</p>
+    <p>{item.role}</p>
   </div>
 
   <div>
     <button>Delete</button>
   </div>
-</div>
+</div></div>
+})}
+
 </>
   )
 }

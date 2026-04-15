@@ -36,8 +36,10 @@ input[type="text"] {
 
 /* MID SECTION */
 .mid-section {
-  display: flex;
-  gap: 25px;
+ display: grid;
+
+  grid-template-columns: 1fr  4fr;
+  gap: 5px;
   margin-top: 20px;
 }
 
@@ -156,4 +158,10 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+}
+
+@media (max-width:769px) {
+  .mid-section {
+  flex-direction: column;
+}
 }
