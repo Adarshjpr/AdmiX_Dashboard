@@ -1,5 +1,6 @@
 
 import './App.css';
+import TaskManager from './pages/TaskManager';
 import UserManagement from './pages/UserManagement';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
    <>
    
    <UserManagement/>
-   
+  <TaskManager/>
    </>
   );
 }
