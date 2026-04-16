@@ -1,30 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const TaskList = () => {
+const TaskList = ({TaskData}) => {
+
+      const [tasks, setTasks]  = useState(TaskData)
+
+    const handelCheak = (index)=>{
+  const updated = [...tasks]
+
+  updated[index].checked = ! updated[index].checked
+
+   setTasks(updated)
+    }
   return (
 
     <>
     
     
-              <div className="tm-tasks-count">3 tasks shown</div>
+              <div className="tm-tasks-count">{TaskData.length} tasks shown</div>
+{
 
-              <div className="tm-task-card border-red">
+    TaskData.map((item , index)=>{
+return <div className="tm-task-card border-red">
                 <div className="tm-task-top">
                   <div className="tm-task-left">
-                 <input type="checkbox" className="tm-checkbox" />
-                    <div className="tm-task-name">Login Page Design</div>
+                 <input type="checkbox" className="tm-checkbox"    checked={item.checked}  onChange={()=>handelCheak(index)} />
+                    <div className="tm-task-name">{item.title}</div>
                   </div>
                   <div className="tm-delete-btn">Delete</div>
                 </div>
-                <div className="tm-task-desc">Figma se React mein convert karo</div>
+                <div className="tm-task-desc">{item.Description}</div>
                 <div className="tm-task-meta">
-                  <span className="tm-badge badge-high">High</span>
-                  <div className="tm-avatar avatar-rv">RV</div>
-                  <span className="tm-meta-name">Rahul Verma</span>
-                  <span className="tm-meta-date overdue">Overdue: 2024-12-20</span>
+               <span
+                className={`tm-badge ${
+                  item.priority === "High"
+                    ? "badge-high"
+                    : item.priority === "Medium"
+                    ? "badge-medium"
+                    : "badge-low"
+                }`}
+              >
+                {item.priority}
+              </span>
+                  <div className="tm-avatar avatar-rv">{item.userName.substring(0, 2)}</div>
+                  <span className="tm-meta-name">{item.userName}</span>
+                  <span className="tm-meta-date overdue">Overdue: {item.dateInput}</span>
                   <span className="tm-status-badge status-pending">Pending</span>
                 </div>
               </div>
+    })
+}
+              
     
     </>
   )

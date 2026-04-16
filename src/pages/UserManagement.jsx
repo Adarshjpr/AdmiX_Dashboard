@@ -5,7 +5,7 @@ import UserList from "../component/user/UserList";
 import UserStats from "../component/user/UserStats";
 
 import "../asstes/css/user.css";
-const UserManagement = () => {
+const UserManagement = ({nameArr}) => {
 
 const [ search  , setsearch] = useState("")
 
@@ -15,6 +15,9 @@ const[  data , setData] = useState([])
  
 const  addUser  = (user) =>{
   setData((prev) => [ ...prev , user])
+console.log(user.name)
+
+  nameArr(user.name)
 }
 
 const filterDATA  =  data.filter((user) =>{

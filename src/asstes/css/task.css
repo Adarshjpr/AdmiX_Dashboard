@@ -292,9 +292,9 @@
           border-radius: 4px;
           font-family: 'JetBrains Mono', monospace;
         }
-        .badge-high   { background: #7f1d1d; color: #fca5a5; }
-        .badge-medium { background: #1e3a5f; color: #93c5fd; }
-        .badge-low    { background: #14532d; color: #86efac; }
+            .badge-high   { background: #7f1d1d; color: #fca5a5; }
+            .badge-medium { background: #1e3a5f; color: #93c5fd; }
+            .badge-low    { background: #14532d; color: #86efac; }
 
         .tm-avatar {
           width: 20px;

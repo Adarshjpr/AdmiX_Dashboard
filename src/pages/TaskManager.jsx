@@ -1,11 +1,23 @@
+
+
 import Taskfrom from "../component/task/Taskfrom";
 import TaskCard from "../component/task/TaskCard";
 import TaskList from "../component/task/TaskList";
 import'../asstes/css/task.css'
+import { useState } from "react";
 
-import React from 'react'
 
-const TaskManager = () => {
+
+const TaskManager = ({userName}) => {
+
+const[TaskData ,setTaskData] = useState([])
+
+
+const addTask =(task)=>{
+  setTaskData((prev) => [...prev , task ])
+}
+
+
    return (
     <>
 
@@ -20,10 +32,10 @@ const TaskManager = () => {
           </div>
 
           <div className="tm-body">
-<Taskfrom/>
+<Taskfrom   userName ={userName}   addTask ={addTask}/>
 
             <div>
-<TaskList/>
+<TaskList TaskData={TaskData} />
 
             </div>
           </div>
