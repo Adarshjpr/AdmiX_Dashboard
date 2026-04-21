@@ -54,9 +54,14 @@ data.forEach((user)=>{
       <Search    search={ search}    setsearch={setsearch} />
 
       <div className="mid-section">
-        <UserForm     addUser ={addUser}  /> <div><UserList  data={filterDATA}  /></div>
+
+      <div>
+          <UserForm     addUser ={addUser}  />
+          <UserStats count={rolecount} />
+      </div>
+     <div><UserList  data={filterDATA}  /></div>
       </div> 
-      <UserStats count={rolecount} />
+  
     </>
   );
 };

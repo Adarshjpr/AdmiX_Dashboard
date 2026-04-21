@@ -75,7 +75,7 @@
           overflow: hidden;
         }
         .tm-progress-bar-fill {
-          width: 33%;
+
           height: 100%;
           background: linear-gradient(90deg, #3b82f6, #6366f1);
           border-radius: 999px;
@@ -333,4 +333,40 @@
         }
         .status-pending { background: #1e2535; color: #94a3b8; border: 1px solid #334155; }
         .status-done    { background: #14532d; color: #86efac; border: 1px solid #166534; }
-      
+      .perf-container {
+  width: 260px;
+  background: #2c2c2c;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: sans-serif;
+}
+
+.perf-title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.perf-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.perf-row:last-child {
+  border-bottom: none;
+}
+
+.perf-value {
+  font-weight: 500;
+}
+
+.blue {
+  color: #4da6ff;
+}
+
+.green {
+  color: #00e676;
+}

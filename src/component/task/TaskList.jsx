@@ -1,16 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const TaskList = ({TaskData}) => {
+const TaskList = ({TaskData ,updateTask}) => {
 
-      const [tasks, setTasks]  = useState(TaskData)
 
-    const handelCheak = (index)=>{
-  const updated = [...tasks]
 
-  updated[index].checked = ! updated[index].checked
+   const handelCheak = (index) => {
+    const updated = [...TaskData];
 
-   setTasks(updated)
-    }
+    updated[index] = {
+      ...updated[index],
+      checked: !updated[index].checked
+    };
+// console.log(updated[index].checked) updated[index].checked = ! updated[index].checked
+    updateTask(updated);
+  };
+
+
+
   return (
 
     <>
@@ -23,7 +29,7 @@ const TaskList = ({TaskData}) => {
 return <div className="tm-task-card border-red">
                 <div className="tm-task-top">
                   <div className="tm-task-left">
-                 <input type="checkbox" className="tm-checkbox"    checked={item.checked}  onChange={()=>handelCheak(index)} />
+                 <input type="checkbox" className="tm-checkbox"    checked={item.checked} onChange={()=>handelCheak(index)} />
                     <div className="tm-task-name">{item.title}</div>
                   </div>
                   <div className="tm-delete-btn">Delete</div>
